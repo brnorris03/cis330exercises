@@ -6,6 +6,7 @@ int main()
 
     printf("Are you having a nice day? (y/n)? ");
     
+    /* Get the user input -- a single character */
     userInput = getchar();
 
     if (userInput == 'y') {
