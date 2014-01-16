@@ -9,7 +9,7 @@ CFLAGS = -std=c99
 
 # Default target -- this gets executed when you type just "make" with no arguments
 # Usually used to build everything in the current directory
-all: main union
+all: main fptr
 
 # Rule for separate compilation of source files, creating object files
 # to be linked into executables later
@@ -21,8 +21,11 @@ all: main union
 main: $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS)
 
+fptr: fptr.o
+	$(CC) -o $@ fptr.o
+
 # Useful "phony" targets, i.e., not generating any files
 clean: 
 	echo "Cleaning up!"
-	$(RM) $(OBJECTS) main
+	$(RM) $(OBJECTS) main fptr
 

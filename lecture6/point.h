@@ -1,4 +1,5 @@
-
+#ifndef __POINT_H
+#define __POINT_H
 /* Change the old struct definition:
 struct Point {
   int x, y;
@@ -16,6 +17,7 @@ struct PointStruct {
 };
 typedef struct PointStruct Point;
 */
+
 // Function prototypes
 void movePoint_wrong(Point p, const int dist);
 
@@ -23,4 +25,4 @@ void movePoint(Point *p, const int dist);
 
 void printPoint(Point p);
 
-
+#endif
