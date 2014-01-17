@@ -1,22 +1,42 @@
 #include <stdio.h>
 
-double (*fptr) (int n, double x[]) = NULL;
+double (*fptr)(int n, double x[]) = NULL;
+
+// A couple of functions that work on an array of doubles
+double computeSum(int n, double y[]) {
+	double sum = 0.0;
+	printf("Sum: ");
+	for (int i = 0; i < n; ++i) {
+		sum += y[i];
+	}
+	return sum;
+}
 
 double computeAverage(int n, double y[]) {
-	double avg = 0.0;
-	for (int i = 0; i < n; ++i) {
-		avg += y[i];
+	printf("Average: ");
+	if (n != 0)
+		return computeSum(n, y) / n;
+	else {
+		printf("Warning: Division by 0!");
+		return 0.0;
 	}
-	return avg/n;
 }
 
 //...
 int main() {
-  double x[3] = {1.0,2.0,3.0};
-  double avg = 0.0;
+	const int length = 6;
+	double result = 0.0;
+	double x[] = { 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 };
 
-  fptr = &computeAverage;
-  avg = (*fptr)(3,x);
-  printf("Average: %f\n", avg);
+	// An array of function pointers
+	double (*fptrArray[2]) (int n, double x[]);
+	fptrArray[0] = &computeSum;
+	fptrArray[1] = &computeAverage;
+
+	for (int i = 0; i < 2; ++i) {
+		result = fptrArray[i](length, x);
+		printf("%f\n", result);
+	}
+
 }
 
