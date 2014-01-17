@@ -7,7 +7,7 @@ STRSRCS = mystring.c stringtest.c
 STROBJS = $(STRSRCS:.c=.o) 
 
 CC = gcc
-CFLAGS = -std=c99
+CFLAGS = -std=c99 -Wall
 
 # Default target -- this gets executed when you type just "make" with no arguments
 # Usually used to build everything in the current directory
