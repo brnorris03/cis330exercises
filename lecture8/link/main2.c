@@ -11,6 +11,8 @@ int main()
 {
     addvec(x, y, z, 2);
     printf("z = [%d %d]\n", z[0], z[1]);
+    scalevec(2, z, 2);
+    printf("z = [%d %d]\n", z[0], z[1]);
     return 0;
 }
 /* $end main2 */
