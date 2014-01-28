@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 
 	// Allocate memory for 2-D int array
 	num = (int **) malloc (size * sizeof(int *));
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < size; i++)
 		num[i] = (int *) malloc (size * sizeof(int *));
 	for (j = 0; j < size; j++)
 		num[i][j] = i * size + j;
@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 	}
 
 	// Deallocate memory
-	for (i = 0; i < size; i++)
+	for (i = 0; i <= size; i++)
 		free(num[i]);
 	free(num);
 }
