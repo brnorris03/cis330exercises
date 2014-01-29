@@ -4,14 +4,16 @@
 #include <string>
 #include "quadruped.hpp"
 
+using namespace std;
+
 class Wool {
 public:
 	Wool();
-	Wool(std::string color);
-	inline void setColor(std::string color);
-	inline const std::string getColor();
+	Wool(string color);
+	inline void setColor(string color);
+	inline const string getColor();
 private:
-	std::string color;
+	string color;
 };
 
 class Sheep : public Quadruped {

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "allanimals.hpp"
 
+using namespace std;
 /*
  * Animal class implementation
  */
@@ -37,16 +38,16 @@ Wool::Wool() {
 	color = "White";
 }
 
-Wool::Wool(std::string color) {
+Wool::Wool(string color) {
 	this->color = color;
 }
 
 void
-Wool::setColor(std::string color) {
+Wool::setColor(string color) {
 	this->color = color;
 }
 
-const std::string
+const string
 Wool::getColor() {
 	return this->color;
 }
@@ -60,17 +61,17 @@ Sheep::Sheep() : Quadruped() {
 
 void
 Sheep::eat() {
-	std::cout << wool->getColor() << " sheep grazing some grass...baa!" << std::endl;
+	cout << wool->getColor() << " sheep grazing some grass...baa!" << endl;
 }
 
 void
 Sheep::drink() {
-	std::cout << wool->getColor() << " sheep drinking from trough...baa!" << std::endl;
+	cout << wool->getColor() << " sheep drinking from trough...baa!" << endl;
 }
 
 void
 Sheep::sleep() {
-	std::cout << wool->getColor() << " sheep sleeping in barn..." << std::endl;
+	cout << wool->getColor() << " sheep sleeping in barn..." << endl;
 }
 
 void
@@ -92,22 +93,22 @@ Wolf::Wolf() : Quadruped() {
 
 void
 Wolf::eat() {
-	std::cout << "Wolf eating some veggies..." << std::endl;
+	cout << "Wolf eating some veggies..." << endl;
 }
 
 void
 Wolf::drink() {
-	std::cout << "Wolf drinking from river..." << std::endl;
+	cout << "Wolf drinking from river..." << endl;
 }
 
 void
 Wolf::sleep() {
-	std::cout << "Wolf sleeping in the woods..." << std::endl;
+	cout << "Wolf sleeping in the woods..." << endl;
 }
 
 void
 Wolf::hunt(const Animal &animal) {
 	this->prey = &animal;
-	std::cout << "Wolf dining on animal..." << std::endl;
+	cout << "Wolf dining on animal..." << endl;
 }
 
