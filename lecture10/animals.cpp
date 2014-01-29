@@ -3,6 +3,8 @@
 #include "allanimals.hpp"
 
 using namespace std;
+
+namespace world {
 /*
  * Animal class implementation
  */
@@ -22,13 +24,16 @@ int
 Animal::legCount() {
 	return this->legs;
 }
+};
 
 /*
  * Quadruped class implementation
  */
-Quadruped::Quadruped() : Animal() {
+Quadruped::Quadruped() : world::Animal() {
 	this->legs = 4;
 }
+
+Quadruped::~Quadruped() {}
 
 /*
  * Wool class implementation
@@ -71,7 +76,7 @@ Sheep::drink() {
 
 void
 Sheep::sleep() {
-	cout << wool->getColor() << " sheep sleeping in barn..." << endl;
+	cout << wool->getColor() << " sheep sleeping in barn...zzz!" << endl;
 }
 
 void
@@ -84,6 +89,10 @@ Sheep::getWool() {
 	return *(this->wool);
 }
 
+string
+Sheep::toString() {
+	return this->wool->getColor() + " sheep";
+}
 /*
  * Wolf class implementation
  */
@@ -107,8 +116,12 @@ Wolf::sleep() {
 }
 
 void
-Wolf::hunt(const Animal &animal) {
+Wolf::hunt(world::Animal &animal) {
 	this->prey = &animal;
-	cout << "Wolf dining on animal..." << endl;
+	cout << "Wolf dining on " << animal.toString() << "..." << endl;
 }
 
+string
+Wolf::toString() {
+	return " wolf";
+}

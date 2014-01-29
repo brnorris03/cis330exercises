@@ -3,9 +3,10 @@
 
 #include "animal.hpp"
 
-class Quadruped : public Animal {
+class Quadruped : public world::Animal {
 public:
     Quadruped();
+    ~Quadruped();
     void walk();
     void run();
 };

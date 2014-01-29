@@ -23,6 +23,7 @@ public:
     virtual void eat();
     virtual void sleep();
     virtual void drink();
+    virtual string toString();
 
     // New functions in this class
     void growWool(const Wool&);

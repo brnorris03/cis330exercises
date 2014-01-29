@@ -7,6 +7,8 @@
 
 #include "allanimals.hpp"
 
+using namespace world;
+
 int main() {
 
 	Sheep sheep;

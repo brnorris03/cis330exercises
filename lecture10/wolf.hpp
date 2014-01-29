@@ -11,11 +11,12 @@ public:
     virtual void eat();
     virtual void sleep();
     virtual void drink();
+    virtual string toString();
 
     // New functions in this class
-    void hunt(const Animal&);
+    void hunt(world::Animal&);
 private:
-    const Animal *prey;
+    const world::Animal *prey;
 };
 
 #endif /* WOLF_HPP_ */
