@@ -24,7 +24,7 @@ int
 Animal::legCount() {
 	return this->legs;
 }
-};
+}; // namespace world
 
 /*
  * Quadruped class implementation
