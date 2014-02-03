@@ -21,7 +21,9 @@ int main() {
 	sheep.drink();
 	sheep.sleep();
 
-	sheepPtr->growWool(blackWool);
+	Wool whiteWool("White");
+	sheepPtr->growWool(whiteWool);
+	sheepPtr->sleep();
 	wolf.drink();
 	wolf.hunt(sheepPtr);
 	return 0;
