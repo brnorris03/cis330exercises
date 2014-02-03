@@ -116,9 +116,10 @@ Wolf::sleep() {
 }
 
 void
-Wolf::hunt(world::Animal &animal) {
-	this->prey = &animal;
-	cout << "Wolf dining on " << animal.toString() << "..." << endl;
+Wolf::hunt(world::Animal *animal) {
+	//this->prey = &animal;
+	cout << "Wolf dining on " << animal->toString() << "..." << endl;
+	delete animal;
 }
 
 string

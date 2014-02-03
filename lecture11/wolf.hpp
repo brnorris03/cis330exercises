@@ -14,9 +14,9 @@ public:
     virtual string toString();
 
     // New functions in this class
-    void hunt(world::Animal&);
+    void hunt(world::Animal *);
 private:
-    const world::Animal *prey;
+    //world::Animal *prey;
 };
 
 #endif /* WOLF_HPP_ */

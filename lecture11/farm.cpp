@@ -12,6 +12,7 @@ using namespace world;
 int main() {
 
 	Sheep sheep;
+	Sheep *sheepPtr = new Sheep();
 	Wolf wolf;
 	Wool blackWool("Black");
 
@@ -20,7 +21,8 @@ int main() {
 	sheep.drink();
 	sheep.sleep();
 
+	sheepPtr->growWool(blackWool);
 	wolf.drink();
-	wolf.hunt(sheep);
+	wolf.hunt(sheepPtr);
 	return 0;
 }
