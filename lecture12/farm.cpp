@@ -6,6 +6,7 @@
  */
 
 #include "allanimals.hpp"
+#include "farmer.hpp"
 
 using namespace world;
 
@@ -20,6 +21,9 @@ int main() {
 	sheep.eat();
 	sheep.drink();
 	sheep.sleep();
+
+	Farmer joe;
+	joe.shearSheep(sheep);
 
 	sheepPtr->growWool(blackWool);
 	wolf.drink();

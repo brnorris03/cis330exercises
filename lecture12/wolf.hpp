@@ -1,6 +1,7 @@
 #ifndef WOLF_HPP_
 #define WOLF_HPP_
 
+#include <string>
 #include "animal.hpp"
 #include "quadruped.hpp"
 
@@ -11,7 +12,7 @@ public:
     virtual void eat();
     virtual void sleep();
     virtual void drink();
-    virtual string toString();
+    virtual std::string toString();
 
     // New functions in this class
     void hunt(world::Animal *);

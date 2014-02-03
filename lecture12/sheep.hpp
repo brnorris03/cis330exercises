@@ -28,6 +28,9 @@ public:
     // New functions in this class
     void growWool(const Wool&);
     const Wool& getWool();
+
+    // Make Farmer
+    friend class Farmer;
 private:
     Wool *wool;
 };
