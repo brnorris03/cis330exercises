@@ -6,7 +6,7 @@ CXX = g++
 
 all: farm dynamicmemory
 
-%.o : %.c
+%.o : %.cpp
 	$(CXX) -g -c $<
 	
 farm: $(OBJECTS)
