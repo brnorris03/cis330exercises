@@ -6,7 +6,7 @@ CXX = g++
 
 all: farm
 
-%.o : %.c
+%.o : %.cpp
 	$(CXX) -g -c $<
 	
 farm: $(OBJECTS)
