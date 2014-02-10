@@ -3,7 +3,7 @@ SOURCES = animal.cpp quadruped.cpp sheep.cpp wolf.cpp farmer.cpp farm.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 
-CXX = g++
+CXX = g++ -std=c++0x
 
 all: farm 
 
@@ -14,7 +14,7 @@ farm: $(OBJECTS)
 	$(CXX) -g -o $@ $(OBJECTS)
 
 moveconstructor: moveconstructor.o
-	$(CXX) -std=c++0x -g -o $@ $<
+	$(CXX) -g -o $@ $<
 	
 clean:
 	$(RM) *.o farm 
