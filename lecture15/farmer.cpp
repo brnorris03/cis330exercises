@@ -20,6 +20,6 @@ Farmer::~Farmer() {
 
 void
 Farmer::shearSheep(Sheep &s) {
-	s.wool = NULL;
-	std::cout << "Farmer shearing sheep "<<  std::endl;
+	s.wool = Wool("Sheared");
+	std::cout << "Farmer shearing sheep ..."<<  std::endl;
 }

@@ -13,11 +13,12 @@ using namespace world;
 int main() {
 
 	Sheep sheep;
-	Sheep *sheepPtr = new Sheep();
 	Wolf wolf;
-	Wool blackWool("Black");
+	//Wool blackWool("Black");
+	Wool w = Wool("White");
 
-	sheep.growWool(blackWool);
+	//sheep.growWool(blackWool);
+	sheep.growWool(Wool("Black"));
 	sheep.eat();
 	sheep.drink();
 	sheep.sleep();
@@ -25,8 +26,9 @@ int main() {
 	Farmer joe;
 	joe.shearSheep(sheep);
 
-	sheepPtr->growWool(blackWool);
+	Sheep *unlucky = new Sheep();
+	unlucky->growWool(Wool("Tan"));
 	wolf.drink();
-	wolf.hunt(sheepPtr);
+	wolf.hunt(unlucky);
 	return 0;
 }
