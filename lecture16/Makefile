@@ -1,6 +1,6 @@
 CXX = g++ 
 
-all: formattedOutput 
+all: formattedOutput theMatrix
 
 %.o : %.cpp
 	$(CXX) -g -c $<
@@ -8,6 +8,10 @@ all: formattedOutput
 formattedOutput: formattedOutput.o
 	$(CXX) -g -o $@ $<
 	
+theMatrix: theMatrix.o
+	$(CXX) -g -o $@ $< -lpthread
+	
+
 clean:
-	$(RM) *.o formattedOutput 
+	$(RM) *.o formattedOutput theMatrix
 	 
