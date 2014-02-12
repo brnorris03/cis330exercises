@@ -36,7 +36,7 @@ char getChar(int iGenerator, char cBase, int iRange) {
 int main() {
 	using namespace std;
 
-    int i = 0;
+    	int i = 0;
 	char caRow[80];
 	int j = 7;
 	int k = 2;
@@ -53,6 +53,7 @@ int main() {
 			}
 			cout << caRow[i++];
 		}
+		cout << endl;
 		// Manage streaks
 		j = (j + 31);
 		k = (k + 17);
@@ -63,7 +64,7 @@ int main() {
 		caRow[l % 80] = '-';
 		caRow[m % 80] = ' ';
 		// Delay (in seconds)
-		//sleep(1);
+		sleep(.3);
 	}
 }
 
