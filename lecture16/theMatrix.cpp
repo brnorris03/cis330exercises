@@ -10,7 +10,7 @@
 #include <iomanip>
 #include <ostream>
 #include <cstdlib> 	  // for rand()
-#include <pthread.h> // for sleep(int)
+#include <pthread.h>  // for sleep(int)
 
 // A nice Color class to hide the nastiness of changing terminal colors (bash)
 namespace Color {
