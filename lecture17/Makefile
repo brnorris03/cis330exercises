@@ -5,13 +5,16 @@ OBJECTS = $(SOURCES:.cpp=.o)
 
 CXX = g++ -std=c++0x
 
-all: farm 
+all: farm it
 
 %.o : %.cpp
 	$(CXX) -g -c $<
 	
 farm: $(OBJECTS)
 	$(CXX) -g -o $@ $(OBJECTS)
+
+it: it.o
+	$(CXX) -g -o $@ $<
 
 clean:
 	$(RM) *.o farm 
