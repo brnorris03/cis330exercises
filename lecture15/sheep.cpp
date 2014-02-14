@@ -34,11 +34,13 @@ Wool::Wool(Wool&& other) : color(other.color) {
 Wool& 
 Wool::operator=(const Wool& rhs)  {
 	this->color = rhs.color;
+	return *this;
 }
 
 Wool& 
 Wool::operator=(Wool&& rhs) {
 	this->color = rhs.color;
+	return *this;
 }
 		        
 
