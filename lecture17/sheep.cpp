@@ -31,19 +31,18 @@ Wool::Wool(Wool&& other) : color(other.color) {
 	cout << "Wool move constructor" << endl;
 }
 
-Wool& 
+Wool&
 Wool::operator=(const Wool& rhs)  {
 	this->color = rhs.color;
+	return *this;
 }
 
-Wool& 
+Wool&
 Wool::operator=(Wool&& rhs) {
 	this->color = rhs.color;
+	return *this;
 }
 		        
-
-
-
 void
 Wool::setColor(string color) {
 	this->color = color;

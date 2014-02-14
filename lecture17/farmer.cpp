@@ -9,13 +9,21 @@
 #include "sheep.hpp"
 #include "farmer.hpp"
 
-Farmer::Farmer() {
-	// TODO Auto-generated constructor stub
-
+Farmer::Farmer(unsigned nSheep) : numSheep(nSheep) {
 }
 
 Farmer::~Farmer() {
-	// TODO Auto-generated destructor stub
+}
+
+void
+Farmer::countSheep(const std::vector<Sheep*> flock) {
+	if (flock.size() < this->numSheep) {
+		std::cout << "Farmer Joe discovers that he is missing some sheep and goes searching..." << std::endl;
+	} else if (flock.size() == this->numSheep) {
+		std::cout << "Farmer Joe counts his sheep -- all there!" << std::endl;
+	} else {
+		std::cout << "Farmer Joe is astounded to find some extra sheep..." << std::endl;
+	}
 }
 
 void

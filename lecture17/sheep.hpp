@@ -24,7 +24,7 @@ public:
 
 	// Assignment
 	Wool& operator=(const Wool&);
-        Wool& operator=(Wool&&);
+    Wool& operator=(Wool&&);
 
 	inline void setColor(string color);
 	inline const string getColor();

@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <cstdlib>
+#include <iostream>
 #include "allanimals.hpp"
 #include "farmer.hpp"
 
@@ -26,6 +27,10 @@ int main() {
 		flock.push_back(newsheep);
 	}
 
+	Farmer joe(flock.size());
+	joe.countSheep(flock);
+
+	// -----
 	Wolf wolf;
 	wolf.drink();
 
@@ -33,12 +38,13 @@ int main() {
 	int index = rand() % flock.size();
 	Sheep *unlucky = flock[index];
 	flock.erase(flock.begin()+index);
+	cout << unlucky->toString() << " wonders away from flock..." << endl;
 
 	// ... and gets eaten
 	wolf.hunt(unlucky);
 
-
-	Farmer joe;
+	// Farmer Joe checks on the flock  again
+	joe.countSheep(flock);
 	for (auto sheepPtr = flock.begin(); sheepPtr != flock.end(); ++sheepPtr) {
 		if ((*sheepPtr) != nullptr)
 			joe.shearSheep(*(*sheepPtr)); // first dereference gets a Sheep *
