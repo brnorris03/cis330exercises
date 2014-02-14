@@ -8,6 +8,9 @@
 class Wolf : public Quadruped {
 public:
     Wolf();
+    Wolf(const Wolf&); // copy constructor
+    Wolf(Wolf&&); // move constructor
+
     // Overridden functions
     virtual void eat();
     virtual void sleep();
@@ -16,8 +19,6 @@ public:
 
     // New functions in this class
     void hunt(world::Animal *);
-private:
-    //world::Animal *prey;
 };
 
 #endif /* WOLF_HPP_ */

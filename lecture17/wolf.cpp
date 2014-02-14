@@ -13,8 +13,13 @@ using namespace std;
  * Wolf class implementation
  */
 Wolf::Wolf() : Quadruped() {
-
 }
+
+// copy constructor
+Wolf::Wolf(const Wolf& w) : Quadruped() {}
+
+// move constructor
+Wolf::Wolf(Wolf&& w) : Quadruped() {}
 
 void
 Wolf::eat() {
@@ -35,6 +40,7 @@ void
 Wolf::hunt(world::Animal *animal) {
 	cout << "Wolf dining on " << animal->toString() << "..." << endl;
 	delete animal;
+	animal = nullptr;
 }
 
 string

@@ -5,6 +5,8 @@
  *      Author: norris
  */
 
+#include <vector>
+#include <cstdlib>
 #include "allanimals.hpp"
 #include "farmer.hpp"
 
@@ -12,23 +14,43 @@ using namespace world;
 
 int main() {
 
-	Sheep sheep;
-	Wolf wolf;
-	//Wool blackWool("Black");
-	Wool w = Wool("White");
+	using namespace std;
 
-	//sheep.growWool(blackWool);
-	sheep.growWool(Wool("Black"));
-	sheep.eat();
-	sheep.drink();
-	sheep.sleep();
+	string woolcolors[] = {"Black", "White", "Grey", "Spotted", "Green"};
+
+	vector<Sheep*> flock;   // We could also store Sheep directly instead of pointers
+	// Make 10 sheep of various colors
+	for (int i = 0; i < 5; i++) {
+		Sheep *newsheep = new Sheep();
+		newsheep->growWool(Wool(woolcolors[i]));
+		flock.push_back(newsheep);
+	}
+
+	Wolf wolf;
+	wolf.drink();
+
+	// Random sheep wonders away...
+	int index = rand() % flock.size();
+	Sheep *unlucky = flock[index];
+	flock.erase(flock.begin()+index);
+
+	// ... and gets eaten
+	wolf.hunt(unlucky);
+
 
 	Farmer joe;
-	joe.shearSheep(sheep);
+	for (auto sheepPtr = flock.begin(); sheepPtr != flock.end(); ++sheepPtr) {
+		if ((*sheepPtr) != nullptr)
+			joe.shearSheep(*(*sheepPtr)); // first dereference gets a Sheep *
+	}
 
-	Sheep *unlucky = new Sheep();
-	unlucky->growWool(Wool("Tan"));
-	wolf.drink();
-	wolf.hunt(unlucky);
+	// Should deallocate sheep here (kill the herd)
+	for (auto sheepPtr = flock.begin(); sheepPtr != flock.end(); ++sheepPtr) {
+		if ((*sheepPtr) != nullptr) { // first dereference gets a Sheep *
+			delete *sheepPtr;
+			*sheepPtr = nullptr;
+		}
+	}
+
 	return 0;
 }
