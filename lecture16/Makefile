@@ -1,21 +1,14 @@
-HEADERS = $(wildcard *.hpp)
-SOURCES = animal.cpp quadruped.cpp sheep.cpp wolf.cpp farmer.cpp farm.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
-
-
-CXX = g++ -std=c++0x
-
-all: farm 
+all: formattedOutput theMatrix
 
 %.o : %.cpp
 	$(CXX) -g -c $<
 	
-farm: $(OBJECTS)
-	$(CXX) -g -o $@ $(OBJECTS)
-
-moveconstructor: moveconstructor.o
+formattedOutput: formattedOutput.o
 	$(CXX) -g -o $@ $<
 	
+theMatrix: theMatrix.o
+	$(CXX) -g -o $@ $< -lpthread
+	
+
 clean:
-	$(RM) *.o farm 
-	 
+	$(RM) *.o formattedOutput theMatrix
